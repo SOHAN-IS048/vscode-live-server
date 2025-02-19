@@ -1,0 +1,88 @@
+console.log("hello world");
+
+
+
+// Function to calculate the sum
+function calculateSum(a, b) {
+    return a + b;
+}
+
+// Example usage
+var num1 = 5;
+var num2 = 10;
+var result = calculateSum(num1, num2);
+
+// Display the result in the console
+console.log("The sum of " + num1 + " and " + num2 + " is " + result);
+
+// Create an array of 5 cities
+var cities = ["Tokyo", "Paris", "New York", "Mumbai", "Sydney"];
+
+// Add a new city at the end
+cities.push("London");
+console.log("Array after adding a new city: " + cities);
+
+// Remove the first city
+cities.shift();
+console.log("Array after removing the first city: " + cities);
+
+// Find and log the index of a specific city
+var specificCity = "New York";
+var cityIndex = cities.indexOf(specificCity);
+
+if (cityIndex !== -1) {
+    console.log("The index of " + specificCity + " is: " + cityIndex);
+} else {
+    console.log(specificCity + " is not in the array.");
+}
+
+
+
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question('Enter a string: ', (userString) => {
+    // Find the length of the string
+    var lengthOfString = userString.length;
+    console.log("Length of the string: " + lengthOfString);
+
+    // Extract the word "javascript" using substring or slice
+    var startIndex = userString.indexOf("javascript");
+    var endIndex = startIndex + "javascript".length;
+
+    if (startIndex !== -1) {
+        var extractedWord = userString.substring(startIndex, endIndex);
+        console.log("Extracted word: " + extractedWord);
+    } else {
+        console.log("The word 'javascript' is not found in the string.");
+    }
+
+    // Replace one word with another word
+    // For example, replace "hello" with "hi"
+    var newString = userString.replace("hello", "hi");
+    console.log("New string after replacement: " + newString);
+
+    // Write a new string (For simplicity, we'll define a new string here)
+    var newStringContent = "This is a new string.";
+    console.log("New string: " + newStringContent);
+
+    // Function to check if a given string is a palindrome
+    function isPalindrome(str) {
+        var cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+        var reversedStr = cleanedStr.split('').reverse().join('');
+        return cleanedStr === reversedStr;
+    }
+
+    // Check if the user input is a palindrome
+    var isPalindromeResult = isPalindrome(userString);
+    console.log("Is the input string a palindrome? " + isPalindromeResult);
+
+    rl.close();
+});
+
+
